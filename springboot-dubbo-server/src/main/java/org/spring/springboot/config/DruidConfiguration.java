@@ -1,4 +1,4 @@
-package org.spring.springboot.config.ds;
+package org.spring.springboot.config;
 
 import java.sql.SQLException;
 
