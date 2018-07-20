@@ -31,9 +31,9 @@ public class DataSourceConfigurer {
      *
      * @return data source
      */
-    @Bean("writer")
+    @Bean("write")
     @Primary
-    @ConfigurationProperties(prefix = "spring.datasource.druid.writer")
+    @ConfigurationProperties(prefix = "spring.datasource.druid.write")
     public DataSource master() {
         return DruidDataSourceBuilder.create().build();
     }
@@ -58,7 +58,7 @@ public class DataSourceConfigurer {
     @Bean("dynamicDataSource")
     public DataSource dynamicDataSource() {
         DynamicRoutingDataSource dynamicRoutingDataSource = new DynamicRoutingDataSource();
-        Map<Object, Object> dataSourceMap = new HashMap<>(4);
+        Map<Object, Object> dataSourceMap = new HashMap<>(2);
         dataSourceMap.put(DataSourceKey.write.name(), master());
         dataSourceMap.put(DataSourceKey.read.name(), slave());
 
