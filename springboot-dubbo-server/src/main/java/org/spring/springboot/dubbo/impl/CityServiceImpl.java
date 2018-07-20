@@ -17,7 +17,6 @@ import com.alibaba.dubbo.config.annotation.Service;
  */
 //注册为 Dubbo 服务
 @Service(version = "1.0.0")
-@Component("cityService")
 public class CityServiceImpl implements CityService {
 
     @Autowired
