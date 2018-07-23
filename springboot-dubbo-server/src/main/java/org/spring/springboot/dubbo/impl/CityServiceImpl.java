@@ -6,7 +6,7 @@ import org.spring.springboot.dao.CityDao;
 import org.spring.springboot.domain.City;
 import org.spring.springboot.dubbo.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.alibaba.dubbo.config.annotation.Service;
 
@@ -16,7 +16,7 @@ import com.alibaba.dubbo.config.annotation.Service;
  * Created by bysocket on 07/02/2017.
  */
 //注册为 Dubbo 服务
-@Service(version = "1.0.0")
+@Service(version = "1.0.0",interfaceClass=CityService.class)
 public class CityServiceImpl implements CityService {
 
     @Autowired

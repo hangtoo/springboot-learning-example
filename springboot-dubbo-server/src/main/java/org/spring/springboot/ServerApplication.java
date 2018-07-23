@@ -3,6 +3,8 @@ package org.spring.springboot;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * Spring Boot 应用启动类
@@ -13,6 +15,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 //mapper 接口类扫描包配置
 @MapperScan("org.spring.springboot.dao")
+@EnableTransactionManagement
+@EnableAspectJAutoProxy
 public class ServerApplication {
 
     public static void main(String[] args) {
