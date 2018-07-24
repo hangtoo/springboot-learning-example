@@ -21,12 +21,12 @@ import org.springframework.stereotype.Component;
 public class DynamicDataSourceAspect {
     private static final Logger logger = LoggerFactory.getLogger(DynamicDataSourceAspect.class);
 
-    private final String[] QUERY_PREFIX = {"select"};
+    private final String[] QUERY_PREFIX = {"select","find","get"};
 
     /**
      * Dao aspect.
      */
-    @Pointcut("execution( * cn.com.hellowood.dynamicdatasource.mapper.*.*(..))")
+    @Pointcut("execution( * org.spring.springboot.dubbo.*.*(..))")
     public void daoAspect() {
     }
 
