@@ -1,11 +1,11 @@
 package org.spring.springboot.dubbo;
 
-import com.alibaba.dubbo.config.annotation.Reference;
-
 import java.util.List;
 
 import org.spring.springboot.domain.City;
 import org.springframework.stereotype.Component;
+
+import com.alibaba.dubbo.config.annotation.Reference;
 
 /**
  * 城市 Dubbo 服务消费者
@@ -27,6 +27,13 @@ public class CityDubboConsumerService {
         System.out.println(city.toString());
         
         List<City> citys=cityService.findAllCity();
+        
+        for(City e:citys) {
+        		System.out.println(e.getId());
+        		System.out.println(e.getCityName());
+        		cityService.deleteCity(e.getId());
+        }
+        
         System.out.println(citys.size());
         
     }

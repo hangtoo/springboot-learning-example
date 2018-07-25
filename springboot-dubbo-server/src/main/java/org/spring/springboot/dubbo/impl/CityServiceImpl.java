@@ -17,6 +17,7 @@ import com.alibaba.dubbo.config.annotation.Service;
  */
 //注册为 Dubbo 服务
 @Service(version = "1.0.0",interfaceClass=CityService.class)
+@Transactional
 public class CityServiceImpl implements CityService {
 
     @Autowired
@@ -42,7 +43,9 @@ public class CityServiceImpl implements CityService {
 
     @Override
     public Long deleteCity(Long id) {
-        return cityDao.deleteCity(id);
+    		Long n=cityDao.deleteCity(id);
+    		int a=10/0;
+        return n;
     }
 
 }
