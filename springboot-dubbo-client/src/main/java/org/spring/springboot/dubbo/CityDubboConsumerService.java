@@ -21,20 +21,21 @@ public class CityDubboConsumerService {
     @Reference(version = "1.0.0")
     CityService cityService;
 
-    public void printCity() {
+    public List<City> printCity() {
         String cityName="温岭";
         City city = cityDubboService.findCityByName(cityName);
         System.out.println(city.toString());
         
         List<City> citys=cityService.findAllCity();
         
-        for(City e:citys) {
-        		System.out.println(e.getId());
-        		System.out.println(e.getCityName());
-        		cityService.deleteCity(e.getId());
-        }
+//        for(City e:citys) {
+//        		System.out.println(e.getId());
+//        		System.out.println(e.getCityName());
+//        		cityService.deleteCity(e.getId());
+//        }
         
         System.out.println(citys.size());
+        return citys;
         
     }
 }
